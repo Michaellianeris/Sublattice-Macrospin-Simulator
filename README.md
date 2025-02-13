@@ -11,7 +11,15 @@ Main Components
 2) conf.py – Defines physical parameters for two sublattices.
 3) current.py – Implements time-dependent effects for external fields, currents, and anisotropies acting on each sublattice separately.
 4) solver.py – Computes sublattice magnetization dynamics:
-5) m1 and m2 evolve separately but are coupled via exchange interactions.
-6) Uses Heun’s method and Runge-Kutta (RK4) for integration.
-7) run.py – Manages time evolution for both sublattices and stores results.
-8) output.py – Saves and visualizes the evolution of both sublattices.
+   -m1 and m2 evolve separately but are coupled via exchange interactions.
+   -Uses Heun’s method and Runge-Kutta (RK4) for integration.
+5) run.py – Manages time evolution for both sublattices and stores results.
+6) output.py – Saves and visualizes the evolution of both sublattices.
+
+Key Highlights
+
+Sublattice Model: Tracks two distinct spin sublattices (m1, m2).
+✅ Coupled Magnetization Dynamics: Interactions affect each other’s evolution.
+✅ Time-Dependent External Influences: Includes current, anisotropy, and external fields for each sublattice.
+✅ Numerical Stability: Uses Heun’s method & RK4 for accuracy.
+✅ Data Output & Visualization: Saves .dat files and generates magnetization plots.
