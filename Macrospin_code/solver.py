@@ -9,7 +9,7 @@ class solver:
     def mxx(self, m1, m2, t0): 
         param = self.param
 
-        # Ensuring double precision calculations
+        
         k = np.float64((2 * param.Ku) / (param.mu0 * param.Ms**2))
         J = np.float64((4 * param.A0) / (param.mu0 * param.Ms**2 * param.l**2))
         H = np.float64(param.H / (param.mu0 * param.Ms))
@@ -27,7 +27,7 @@ class solver:
         pp = np.cross(m1, n)
         bb = np.cross(m1, pp)
 
-        # LLG equation with double precision
+        # LLG equation 
         s = np.float64(-1.0*(param.g0 * param.mu0 * param.Ms) / (1 + param.a**2) * (pp + param.a * bb)) #3.58
         return s
 
