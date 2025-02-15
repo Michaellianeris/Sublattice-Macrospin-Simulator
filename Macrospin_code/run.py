@@ -12,7 +12,7 @@ class run:
         param = self.param
         solver = self.solver
 
-        # Ensure double precision for initial values
+        
         m1 = np.array(param.m1, dtype=np.float64)
         m2 = np.array(param.m2, dtype=np.float64)
         t0 = np.float64(0.0)
@@ -26,18 +26,18 @@ class run:
         k = int(tnew / hh)
         pp = int(k / w)
 
-        # Preallocate results with double precision
+        
         Results1 = np.zeros((pp, 4), dtype=np.float64)
         Results2 = np.zeros((pp, 4), dtype=np.float64)
 
         for j in range(k): 
-            t00 = np.float64(t0 / (param.g0 * param.mu0 * param.Ms))  # Ensure t00 is also double precision
+            t00 = np.float64(t0 / (param.g0 * param.mu0 * param.Ms))  
 
             if j == 0:
                 Results1[j, :] = [t00, m1[0], m1[1], m1[2]]
                 Results2[j, :] = [t00, m2[0], m2[1], m2[2]]
 
-            # Call the solver method with double precision
+            # Call the solver method 
             m1, m2 = solver.Heun(m1, m2, t0)
 
             if i == w:
@@ -50,7 +50,7 @@ class run:
                 n += 1
                 i = 0  # Reset counter
 
-            t0 += hh  # Ensure `t0` remains float64
+            t0 += hh  
             i += 1
 
         return [Results1, Results2]
