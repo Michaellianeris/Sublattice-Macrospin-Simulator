@@ -28,7 +28,7 @@ class solver:
         bb = np.cross(m1, pp)
 
         # LLG equation 
-        s = np.float64(-1.0*(param.g0 * param.mu0 * param.Ms) / (1 + param.a**2) * (pp + param.a * bb)) #3.58
+        s = np.float64(-1.0*(param.g0 * param.mu0 * param.Ms) / (1 + param.a**2) * (pp + param.a * bb)) 
         return s
 
     def Heun(self, m1, m2, t0):  # Heun Method
